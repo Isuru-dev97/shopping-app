@@ -12,7 +12,7 @@ function Navbar() {
         </div>
         <div className="nav-item">
           <ul className=" inline-block ">
-            <li className=" inline-block p-3">
+            <li className=" inline-block p-3 font-semibold ">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -22,7 +22,7 @@ function Navbar() {
                 Home
               </NavLink>
             </li>
-            <li className=" inline-block p-3">
+            <li className=" inline-block p-3 font-semibold">
               <NavLink
                 to="deals"
                 className={({ isActive }) =>
@@ -32,7 +32,7 @@ function Navbar() {
                 Deals
               </NavLink>
             </li>
-            <li className=" inline-block p-3">
+            <li className=" inline-block p-3 font-semibold">
               <NavLink
                 to="about"
                 className={({ isActive }) =>
@@ -42,7 +42,7 @@ function Navbar() {
                 About Us
               </NavLink>
             </li>
-            <li className=" inline-block p-3">
+            <li className=" inline-block p-3 font-semibold">
               <NavLink
                 to="contact"
                 className={({ isActive }) =>
