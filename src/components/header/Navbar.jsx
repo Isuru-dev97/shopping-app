@@ -2,8 +2,11 @@ import React from "react";
 import Container from "../Container";
 import { NavLink } from "react-router-dom";
 import img from "../header/logo.png";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Navbar() {
+  const { cartAmount } = useSelector((store) => store.cart);
   return (
     <Container>
       <div className="content-wrapper md:flex flex-row bg-white justify-between h-72px max-w-1150px p-1">
@@ -12,7 +15,7 @@ function Navbar() {
         </div>
         <div className="nav-item">
           <ul className=" inline-block ">
-            <li className=" inline-block p-3">
+            <li className=" inline-block p-3 font-semibold ">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -22,7 +25,7 @@ function Navbar() {
                 Home
               </NavLink>
             </li>
-            <li className=" inline-block p-3">
+            <li className=" inline-block p-3 font-semibold">
               <NavLink
                 to="deals"
                 className={({ isActive }) =>
@@ -32,7 +35,7 @@ function Navbar() {
                 Deals
               </NavLink>
             </li>
-            <li className=" inline-block p-3">
+            <li className=" inline-block p-3 font-semibold">
               <NavLink
                 to="about"
                 className={({ isActive }) =>
@@ -42,7 +45,7 @@ function Navbar() {
                 About Us
               </NavLink>
             </li>
-            <li className=" inline-block p-3">
+            <li className=" inline-block p-3 font-semibold">
               <NavLink
                 to="contact"
                 className={({ isActive }) =>
@@ -63,13 +66,19 @@ function Navbar() {
         </div>
         <div className="for-register">
           <ul className=" inline-block">
-            <li className=" inline-block p-3">
-              <a href="">Sign Up</a>
-            </li>
-            <li className=" inline-block p-3">
-              <a className=" inline-block" href="">
-                Sign In
-              </a>
+            <li className=" p-3 flex">
+              <div>
+                <Link to="mycart" activeClassName="current">
+                  <img
+                    className="w-10 h-8 absolute"
+                    src="images/cart.png"
+                    alt=""
+                  />
+                </Link>
+                <span className="p-1 bg-black text-white absolute px-2 ml-5 top-1 text-center rounded-full leading-4 min-w-14px border-3 ">
+                  {cartAmount}
+                </span>
+              </div>
             </li>
           </ul>
         </div>
