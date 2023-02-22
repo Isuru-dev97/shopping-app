@@ -1,14 +1,14 @@
 import React from "react";
 import BlackLayout from "../Layout/BlackLayout";
 import Container from "../components/Container";
-import CartContainer from "../components/CartContainer";
+import StoreContainer from "../components/StoreContainer";
 
 function Home() {
   return (
     <BlackLayout>
       <section className="secone">
         <Container>
-          <CartContainer />
+          <StoreContainer />
         </Container>
       </section>
     </BlackLayout>

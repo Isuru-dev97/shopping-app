@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { addToCart } from "../features/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-function CartItem({ id, image, name, price }) {
+function StoreItem({ image, name, price }) {
   const dispatch = useDispatch();
 
   const [count, setCount] = useState(1);
@@ -41,7 +41,7 @@ function CartItem({ id, image, name, price }) {
       <button
         className=" text-center px-5 pb-2 pt-2 mb-4 ml-24 rounded-lg ... bg-gray-50 text-black"
         onClick={() => {
-          dispatch(addToCart(id));
+          dispatch(addToCart());
         }}
       >
         Add to cart
@@ -50,4 +50,4 @@ function CartItem({ id, image, name, price }) {
   );
 }
 
-export default CartItem;
+export default StoreItem;
