@@ -1,20 +1,21 @@
 import React from "react";
-import image from "../assets/store/blackhoddi.jpg";
 
-const MyCartitem = () => {
+const MyCartitem = ({ image, name, quantity, price }) => {
   return (
-    <div className="max-w-lg mx-auto bg-slate-50 text-gray-900 rounded-lg p-4 text-center flex flex-row mb-4">
-      <img className="w-40 max-h-40 object-contain" src={image} alt="" />
-      <div>
-        <h3 className="text-xl">BlackHoddi</h3>
-        <p className="text-xl">
-          <strong>quantity:</strong>1
-        </p>
-        <p>
-          <strong>Price : </strong>$500
-        </p>
+    <>
+      <div className="max-w-lg mx-auto bg-slate-50 text-gray-900 rounded-lg p-4 text-center flex flex-row mb-4 justify-center">
+        <img className="w-40 max-h-40 object-contain" src={image} alt="" />
+        <div>
+          <h3 className="text-xl pl-3">{name}</h3>
+          <p className="text-sm pl-3">
+            <strong>Quantity : {quantity}</strong>
+          </p>
+          <p className="pl-3">
+            <strong>Price : {price} </strong>
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

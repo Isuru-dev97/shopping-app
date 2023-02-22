@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/header/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -6,8 +6,14 @@ import Deals from "./pages/Deals";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import MyCart from "./pages/MyCart";
+import { useDispatch } from "react-redux";
+import { getItem } from "./features/cartSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getItem());
+  }, []);
   return (
     <div className="app">
       <Navbar />

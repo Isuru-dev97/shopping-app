@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { addToCart } from "../features/cartSlice";
 import { useDispatch } from "react-redux";
 
-function CartItem({ image, name, price }) {
+function StoreItem({ image, name, price }) {
   const dispatch = useDispatch();
 
   const [count, setCount] = useState(1);
@@ -50,4 +50,4 @@ function CartItem({ image, name, price }) {
   );
 }
 
-export default CartItem;
+export default StoreItem;
