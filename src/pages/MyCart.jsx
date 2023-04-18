@@ -1,10 +1,9 @@
 import React from "react";
 import MyCartitem from "./MyCartitem";
 import { useSelector } from "react-redux";
-import Items from "../Items";
 
 const MyCart = () => {
-  const { Items } = useSelector((store) => store.cart);
+  const { ItemsSlice } = useSelector((store) => store.cart);
   return (
     <div>
       <MyCartitem />

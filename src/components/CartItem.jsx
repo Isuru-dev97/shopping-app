@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { addToCart } from "../features/cartSlice";
 import { useDispatch } from "react-redux";
 
-function CartItem({ image, name, price }) {
+function CartItem({ image, title, price }) {
   const dispatch = useDispatch();
 
   const [count, setCount] = useState(1);
@@ -20,7 +20,7 @@ function CartItem({ image, name, price }) {
   return (
     <div className="box inline-block  bg-gray-900 text-slate-50 mt-6 rounded-b-3xl">
       <img src={image} alt="" />
-      <h3 className="text-2xl pt-2 text-center">{name}</h3>
+      <h3 className="text-2xl pt-2 text-center">{title}</h3>
       <h4 className="text-xl pt-2 text-center pb-2">{price}</h4>
 
       <div className="text-center flex gap-2 justify-center">
